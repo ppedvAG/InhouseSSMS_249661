@@ -1,3 +1,23 @@
+--Wir wollen sicher sein, dass wir auf der richtigen DB sind!
+--immer markieren undann ausführen
+
+
+use northwind; --; eigtl Pflicht
+GO --kein TSQL Befehl
+
+--Kommentieren!
+
+--ab 2 -- ist er Rest der Zeile ein Kommentar
+
+/*
+
+alles hier dazwischen ist ein Kommentar
+
+select 100
+*/
+
+
+
 use northwind;
 GO
 
