@@ -1,3 +1,27 @@
+
+select * from tabelle t1 
+order by spalte1 asc,spalte2 desc
+
+
+
+select 
+	freight as Fracht,
+	orderid
+from orders	o
+where fracht < 100
+order by fracht
+
+ --FROM--> WHERE --> SELECT --> ORDER BY --> AUSGABE
+
+
+ --Bitte alle Kunden sortieren 
+ --zuerst nach Land und dann nach Stadt aufsteigen
+
+	--asc ist default Einstellung
+select country as Land, city as Stadt, * from customers 
+order by country, city
+
+
 select 
 	sp1 , sp2 , Mathe, 'txt' as Alias
 from tabelle t

@@ -81,23 +81,11 @@
           <AssociatedConnUserName>sa2</AssociatedConnUserName>
           <FullPath>10_Exkurs.sql</FullPath>
         </FileNode>
-        <FileNode Name="SQLQuery1.sql">
+        <FileNode Name="Z_datum.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
           <AssociatedConnUserName>sa2</AssociatedConnUserName>
-          <FullPath>SQLQuery1.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLQuery2.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa2</AssociatedConnUserName>
-          <FullPath>SQLQuery2.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLQuery3.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
-          <AssociatedConnUserName>sa2</AssociatedConnUserName>
-          <FullPath>SQLQuery3.sql</FullPath>
+          <FullPath>Z_datum.sql</FullPath>
         </FileNode>
         <FileNode Name="Z_instnwnd.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>

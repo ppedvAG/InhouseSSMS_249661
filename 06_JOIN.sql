@@ -1,3 +1,80 @@
+--mehrere tabellen
+
+--Customers --> Orders ---> Order Details --> Products
+
+--INNER JOIN   99%
+--LEFT JOIN 
+--RIGHT JOIN
+--CROSS JOIN
+--
+
+ select * from tabelle t1 inner join tabelle t2 on t1.spx = t2.spx
+
+
+ select * 
+ from 
+		customers c inner join orders o on c.CustomerID=o.CustomerID
+ --  Tabelle customers verknüpft mit orders auf Basis on Spalte = Spalte
+
+-- Zeige alle Bestellungen an und deren Positionen
+-- mit welche Spalte müssen wir verknüpfen.. 
+-- welche taucht in beiden Tabelle auf:  orderid
+
+select * 
+from 
+		orders o inner join [Order Details] od on o.OrderID=od.OrderID
+
+
+select * 
+from 
+	tabelle t1 inner join tabelle t2 on t1.spx = t2.spx	
+			   inner join tabelle t3 on t3.spy = t2.spy
+			   inner join tabelle t4 on t4.spz = t1.spz
+
+--Cust(customerid)  Orders (orderid) order details (productid) products
+
+--Gib alle Firmenname der Kunden und das gekaufte Produkt daneben
+
+--Ausgabe Companyname, Productname
+
+SELECT c.CompanyName, p.ProductName 
+FROM 
+	  customers c										    inner join 
+	  orders o		     on c.CustomerID = o.CustomerID	    inner join 
+	  [Order Details] od on od.OrderID   = o.OrderID        inner join 
+	  products p		 on p.ProductID  = od.ProductID
+ORDER BY
+		c.CompanyName, p.ProductName 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 select * 
 from 
 		Tabelle1 A inner join Tabelle2 B  on A.spx = BNspx

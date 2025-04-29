@@ -1,5 +1,233 @@
 --So könnte ein SELECT aussehen
 
+--Daten filtern
+
+select Spalten , Mathe, 'Text', Zahlen as Alias
+FROM Tabelle t1
+WHERE
+		Spalte = Wert  -- 100 'bcbc'
+		Spalte > Wert	  -auch bei Text
+		Spalte >= Wert
+		Spalte < Wert
+		Spalter <= Wert
+		AND | OR
+		Spalte = < > Wert
+		Spalte in (Liste) --statt sp = Wert or sp = wert or Sp = wert
+		Spalte between Wert1 and Wert2
+		 --Verneinungen
+		!=  <>  statt = 
+		not in
+		not between
+
+
+		like
+		not like
+
+ select * from customers c
+ where
+		country = 'UK'		    --7
+
+ --aus den USA
+
+ select * from customers c
+ where
+		c.Country = 'USA'
+
+
+select * from orders	  --
+--alle Bestellungen, die wo unter 100 Frachtkosten habe
+
+select freight, * from orders o
+where 
+		o.Freight < 100
+
+
+--alle Bestellungen, die zwischen 50 und 100 sind
+
+Select * from orders 
+where
+		freight >= 50
+		AND
+		freight <= 100	--Spalten müssen auch bei AND wider angegeben werden
+
+--kürzer:
+--between
+
+select * from orders o
+where
+	freight between	 50 and 100
+
+--alle Kunden , die in einem Land wohnen das mit A B oder C beginnt
+--es gibt mehrere Möglichkeiten
+
+select country, * from customers c
+where
+	c.Country	between 'A' and 'D'
+
+ 
+select country, * from customers c
+where
+	c.Country	< 'D'
+
+ 
+select country, * from customers c
+where
+	c.Country	>='A' and c.country < 'D'--kein % da kein like
+
+
+--alle Kunden aus  UK USA Germany Austria
+select * from customers c
+where
+	c.country = 'USA'
+	OR
+	c.country = 'Uk'
+	OR
+	c.country = 'Germany'
+	OR
+	c.country = 'Austria'
+
+ --effizient
+
+ where spalte in (Liste)
+
+
+select * from customers c
+where
+	c.Country in ('UK','USA','Germany','AUstria')
+
+
+ --Like: nur der Like kann Wildcard
+-- % beliebig viele Zeichen -auch 0 
+-- _ steht für genau ein Zeichen
+
+select * from customers c
+where
+	c.Country like 'A%'
+
+select * from orders
+
+--suche alle DS aus Orders, die wo
+--in Customerid : soll mit A beginnen und mit i enden
+
+
+
+select * from orders o 
+where
+		o.CustomerID like 'A%i'
+
+
+ --alle Bestllunge, bei denen in Customerid ein y vorkommt
+ select * from orders o 
+where
+		o.CustomerID like '%y%'
+
+
+--der vorletzte Buchstabe soll y sein
+ select * from orders
+ where CustomerID like '%y_'
+
+
+ --suche alle Orders die in Customerid folgendes haben:
+ -- es soll ein H vorkommen
+ --und der drittletzte Buchstabe soll ein o sein
+
+select * from orders
+ where 
+		CustomerID like '%h%'
+		and
+		CustomerID like '%o__'
+
+ --customerid sol mit A , C F M L S beginnen
+
+ --Wertebereich: [  ]			   --genau ein Zeichen
+
+ --[afgio]
+
+ select * from customers where country like '[abcde]%[mnoprs]'
+
+
+ ---wie	  kann man falsche PINs prüfen
+
+ Spalte PIN
+
+ where PIN '%[a-z]%'
+
+ where pin not like '[0-9][0-9][0-9][0-9]' 
+
+ --Ergebnisse validieren
+ select * from orders
+ --alle Bestellung von AngId 1, 3 -- Employeeid	  UND
+ --aus UK verschifft			  -- Shipcountry  OR
+ --und Fracht < 500				  -- Freight	
+
+select * from orders o
+ where
+		employeeid in (1,3)	  
+		and
+		ShipCountry	  ='UK'	
+		OR
+		Freight		  < 500	
+order by freight desc
+
+select * from tabelle t1 
+order by spalte1 asc,spalte2 desc
+
+
+
+select 
+	freight as Fracht,
+	orderid
+from orders	o
+where fracht < 100
+order by fracht
+
+ --FROM--> WHERE --> SELECT --> ORDER BY --> AUSGABE
+
+
+ --Bitte alle Kunden sortieren 
+ --zuerst nach Land und dann nach Stadt aufsteigen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SELECT 
 	SPALTEN as A , Spalte2 as B, Mathe, 'TXT', SP*
 from Tabelle t
