@@ -1,3 +1,58 @@
+use northwind;
+GO
+
+ /*
+		Autor: Andreas Rauch
+		Erstelle am: 29.4.2025
+		Geändert am : 30.4.2025
+		Infos aus Customers, die wo...
+ */
+
+
+--Infos aus der Tabelle Kunden: Customers
+select 
+		  country
+		, city
+		, companyname 	 --das ist der Firmenname
+		, ContactTitle 
+FROM 
+		Customers 
+where   
+		country = 'ISA' 	 --ob es das gibt??
+		and
+		city = 'XY' 
+order by 
+		  country
+		, city desc	   --absteigend
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*

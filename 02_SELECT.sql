@@ -1,3 +1,89 @@
+--Daten lesen
+
+use northwind;
+
+
+SELECT --Ausgabe
+
+SELECT Spalten as SP1, Zahlen , 'text', Mathe	as Alias
+FROM TABELLE 
+
+
+select 100	 as Zahl
+select 'TEXT'  as text
+
+select t. from tabelle t    --alias für Tabelle
+
+
+select c.ContactTitle,c.City from Customers	 c
+
+
+select * = alle SPalten
+select customerid , 100.2 A from customers
+
+select customerid, country city from customers
+--Land = Stadt?
+
+ -- * 
+--Gib aus der Tab orders folgendes aus
+--Bestelldatum, frachtkosten, bestNr, Kundennr
+
+ select * from orders o		 --zuerst mit Stern und Tabelle mit Alias
+
+ select  from orders o		--Stern weg
+
+select 
+	  o.OrderDate				 --dann mit Alias der Tabelle arbeiten
+	, o.Freight
+	, o.OrderID
+	, o.CustomerID
+from 
+	  orders o
+
+	  --Ebene 15 / 16 
+	  --17 und höher --> Admin
+	  --14 = Security
+
+
+--lasst euch alle BestellDetails ausgeben
+select * from [Order Details]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --immer in einem Script die DB auswählen
 --USE DATABASE
 

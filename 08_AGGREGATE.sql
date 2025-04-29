@@ -240,3 +240,133 @@ select * from #t2
 
 
 
+
+--Aggregate
+
+--max min avg sum count
+
+select count(*) from customers --91
+select count(customerid)  from customers --91
+select count(region) from customers --null zählt nicht mit
+
+select count(*) as Anzahl
+	, min(freight) as MinFracht
+	, max(freight) as MaxFracht
+	, sum(freight) as SummeFracht
+	, avg(freight) as SchnittFracht
+	from orders
+
+select * from orders
+
+select employeeid,sum(freight) from orders
+group by EmployeeID
+
+select ...
+from
+where
+group by
+order by
+
+
+select year(orderdate) as Jahr, sum(freight) from orders
+group by year(orderdate)
+
+
+--Summe der Frachtkosten pro Jahr und Monat
+
+select year(orderdate), month(orderdate) , sum(freight)
+from orders
+group by year(orderdate), month(orderdate) 
+order by 1,2
+
+
+--Umsatz pro Kunden und Land
+
+select Cland, companyname, sum(possumme)
+from vumsatz
+group by Cland, companyname
+order by 1,2,3
+
+
+select country,companyname, sum(od.unitprice*od.quantity)
+from 
+customers c inner join orders o on  c.CustomerID=o.CustomerID		
+			inner join [Order Details] od on od.OrderID=o.OrderID
+group by  country,companyname
+with rollup
+order by 1,2
+
+
+--Wieviel Umsatz haben die Ang 2 und 3 gemacht im Jahr 1998
+--pro Monat
+
+select 
+		v.EmployeeID, v.LastName
+		, month(orderdate)	as Monat
+		, sum(possumme)		as Umsatz
+from	
+		vumsatz v
+where	
+		v.EmployeeID in(2,3)
+		and 
+		year(v.orderdate) = 1998
+group by 
+		v.EmployeeID
+		, v.LastName
+		, month(orderdate)
+
+--aber nur die wo mehr als 20000 Umsatz hatten
+
+select 
+		v.EmployeeID, v.LastName
+		, month(orderdate)	as Monat
+		, sum(possumme)		as Umsatz
+from	
+		vumsatz v
+where	
+		v.EmployeeID in(2,3)
+		and 
+		year(v.orderdate) = 1998
+		--ein where kann keine AGG filtern
+group by 
+		v.EmployeeID
+		, v.LastName
+		, month(orderdate)
+having sum(possumme) > 20000 --nur AGG hier
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

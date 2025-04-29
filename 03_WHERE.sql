@@ -156,6 +156,119 @@ where
 
 
 
+select companyname,  datalength(companyname),
+					len(companyname) 
+from customers
+
+
+---Suche alle Kunden heraus, deren Firmenname mit A, b g oder h beginnt
+
+select * from customers
+where 
+	companyname like 'A%'
+	OR
+	companyname like 'B%'
+	OR
+	companyname like 'G%'
+	OR
+	companyname like 'H%'
+
+--[  ]
+
+select * from customers where
+	companyname like '[abgh]%' --die [] steht für genau ein Zeichen
+
+
+--suche alle Firmen (companyname)
+--deren Firmename mit B C H L M beginnt und mit M  N T S endet
+
+select * from customers
+	where companyname like '[bchlm]%[mnts]'
+
+--was müsste man ändern, wenn mnts das drittletze Zeichen sein sollte
+select * from customers
+	where companyname like '[bchlm]%[mnts]__'
+
+	--DS mit % suchen
+select * from customers 
+where CompanyName like '%[%]%' --?
+
+--Suchen nach '
+select * from customers 
+where CompanyName like '%''%' --? einfach 2 '
+
+
+
+
+
+
+
+
+
+
+/*
+SELECT 
+	SPALTEN
+	TEXT
+	ZAHL
+	MATHE as Alias
+FROM TABELLE t
+WHERE SPALTEN = , <  >
+
+ORDER BY SP oder Alias
+
+
+
+*/
+--kleiner als der Schnitt
+select * from orders
+where
+		freight < 78
+
+
+select * from orders
+where
+		freight > 78
+
+
+select * from orders
+where
+		freight = 78
+
+--geht auch mit Text
+select * from customers
+where companyname < 'M'
+--order by companyname desc
+
+--dazwischen ?
+--wenn eine Spalte mehrere Beding erfüllen soll, dann muss sie wiederholt werden
+--mit AND 
+select * from orders
+where
+		freight >=10
+		AND
+		freight <=100
+order by freight desc
+
+
+--geht das nicht kürzer?
+
+select * from orders
+where
+	freight between 10 and 100 --die Werte sind inklusive >=  <=
+
+--Alle Produkte deren Preis zwischen 50 und 100 liegt
+
+--welche Produkte haben mehr als 100 Stück auf Lager
+
+select productname, UnitsInStock from products where UnitsInStock > 100
+select * from products 
+
+
+
+where 
+		UnitPrice between 50 and 100
+
 
 
 

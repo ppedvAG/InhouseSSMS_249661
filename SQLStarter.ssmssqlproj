@@ -2,26 +2,41 @@
 <SqlWorkbenchSqlProject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SQLStarter">
   <Items>
     <LogicalFolder Name="Verbindungen" Type="2" Sorted="true">
-      <Items />
+      <Items>
+        <ConnectionNode Name="192.100.100.2:sa2">
+          <Created>2025-04-28T08:46:26.6280528+02:00</Created>
+          <Type>SQL</Type>
+          <Server>192.100.100.2</Server>
+          <UserName>sa2</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB>Northwind</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>False</TrustServerCertificate>
+          <EncryptionOption>False</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Abfrage</ApplicationName>
+        </ConnectionNode>
+      </Items>
     </LogicalFolder>
     <LogicalFolder Name="Abfragen" Type="0" Sorted="true">
       <Items>
         <FileNode Name="01_Kommentare.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
           <FullPath>01_Kommentare.sql</FullPath>
         </FileNode>
         <FileNode Name="02_SELECT.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
           <FullPath>02_SELECT.sql</FullPath>
         </FileNode>
         <FileNode Name="03_WHERE.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
           <FullPath>03_WHERE.sql</FullPath>
         </FileNode>
         <FileNode Name="04_ORDER_BY.sql">
@@ -43,15 +58,15 @@
           <FullPath>06_JOIN.sql</FullPath>
         </FileNode>
         <FileNode Name="07_VIEW.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
           <FullPath>07_VIEW.sql</FullPath>
         </FileNode>
         <FileNode Name="08_AGGREGATE.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
           <FullPath>08_AGGREGATE.sql</FullPath>
         </FileNode>
         <FileNode Name="09_TOP_DISTINCT.sql">
@@ -60,10 +75,34 @@
           <AssociatedConnUserName />
           <FullPath>09_TOP_DISTINCT.sql</FullPath>
         </FileNode>
+        <FileNode Name="10_Exkurs.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
+          <FullPath>10_Exkurs.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery1.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
+          <FullPath>SQLQuery1.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
+          <FullPath>SQLQuery2.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery3.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
+          <FullPath>SQLQuery3.sql</FullPath>
+        </FileNode>
         <FileNode Name="Z_instnwnd.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
           <FullPath>Z_instnwnd.sql</FullPath>
         </FileNode>
       </Items>
