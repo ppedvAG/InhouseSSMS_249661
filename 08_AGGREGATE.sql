@@ -1,5 +1,195 @@
 --AGGREGATE
 
+--SUM()
+--AVG()
+--MIN()
+--MAX()
+--COUNT()
+
+select 
+	count(*)--Anzahl der Datansätze
+ ,  min(freight) as MinFracht
+ ,  max(freight) as MaxFracht
+ ,  avg(freight) as SchnittFracht
+ ,	sum(freight) as FrachtGesamt
+ ,  sum(freight) /  count(freight)  --AVG ist also korrekt
+from
+	orders
+
+--Vorsicht bei 
+select 
+		 count(*) ,
+		 count(customerid),
+		 count(Region) 
+from customers
+
+select region  from customers
+
+
+
+--Wie hoch sind die Frachtkosten in Summe pro Ang
+
+
+
+select
+		employeeid,sum(freight)
+from orders
+group by 
+		employeeid
+
+ --mischt man ein Aggregat im Select mit einer Spalte
+ --dann muss ein Group by folgen
+ --group by = pro was? aggregieren	 (alle Spalten des select)
+
+ --wieviele Kunde gibt es pro Land
+
+ select 
+			country, count(*)
+ from 
+			customers
+ group by	
+			country
+
+--Anzahl pro Land und Stadt
+select 
+		country, city, count(*)
+from customers
+group by	country, city
+order by country, city
+
+
+---Wie hoch ist der Umsatz pro Kunde?
+--sortiere das Ergbnis vom höchsten zum geringsten Umsatz
+
+--Firmenname, Umsatz  sortiert
+
+select companyname, sum(od.unitprice*od.quantity)  as Umsatz
+from 
+	customers c inner join orders o on c.CustomerID=o.CustomerID
+				inner join [Order Details] od on od.OrderID=o.OrderID
+group by 
+		 companyname
+order by 
+		 Umsatz desc
+
+
+
+ --mit der Sicht deutlich weniger Aufwand
+select 
+			companyname, sum(possumme) as Umsatz
+from 
+			vsales
+group by	
+			CompanyName
+order by 
+			umsatz desc
+
+
+
+
+
+select companyname, sum(  Unitprice*quantity)	as Umsatz
+from
+	customers c inner join orders o on o.CustomerID=c.CustomerID
+				inner join [Order Details] od on od.OrderID=o.orderid
+ group by companyname	
+
+
+select * from [Order Details]
+
+
+--Wie hoch ist der Durschnittliche Frachtkostenbetrag der Produkte
+
+--Liste alle Produkte auf und deren durchschnittlichen Frachtkostenwert
+
+select 
+		productname, avg(freight) as Schnitt
+from 
+		vsales 
+group by
+		productname
+order by 
+		Schnitt 
+
+ --oder
+
+select 
+		productname, avg(freight) as Schnitt
+from 
+		products p inner join [Order Details] od on od.ProductID=p.ProductID
+				   inner join orders o on o.OrderID=od.OrderID
+ group by
+		productname
+order by 
+		Schnitt 
+
+ --wieviele Kunden gibts es pro Land und Stadt
+  --abu
+  --die wo aus USA, Brasil, Argentina
+  --aber nur die, wo die Anz größer 1 ist
+
+ --HAVING ist der Filter für Aggregate
+
+select		country, city, count(*) as Anz
+from		customers
+where
+			country  in ('USA', 'Brazil', 'Argentina')
+group by	country, city	having count(*) >1
+order by	country, city
+
+
+--Superaggregate
+select		country, city, count(*) as Anz
+from		customers
+group by	country, city	with rollup
+order by	country, city
+
+
+ --Tipp
+select		country, city, count(*) as Anz
+into #t
+from		customers
+group by	country, city	with rollup
+order by	country, city
+
+
+select * from #t
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 select spx, spy , agg()
 from tabelle
 where ...

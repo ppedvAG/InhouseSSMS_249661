@@ -35,9 +35,9 @@ from
 
 --Gib alle Firmenname der Kunden und das gekaufte Produkt daneben
 
---Ausgabe Companyname, Productname
+--Ausgabe Companyname, Productname und doppelte entfernen
 
-SELECT c.CompanyName, p.ProductName 
+SELECT distinct c.CompanyName, p.ProductName
 FROM 
 	  customers c										    inner join 
 	  orders o		     on c.CustomerID = o.CustomerID	    inner join 
@@ -46,34 +46,18 @@ FROM
 ORDER BY
 		c.CompanyName, p.ProductName 
 
+--Ergänze um Lastname des Angestellten in der Ausgabe
 
+SELECT distinct c.CompanyName, p.ProductName, e.Lastname
+FROM 
+	  customers c										    inner join 
+	  orders o		     on c.CustomerID = o.CustomerID	    inner join 
+	  [Order Details] od on od.OrderID   = o.OrderID        inner join 
+	  products p		 on p.ProductID  = od.ProductID		inner join
+	  employees e		 on e.EmployeeID = o.EmployeeID
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ORDER BY
+		c.CompanyName, p.ProductName 
 
 select * 
 from 
@@ -157,3 +141,22 @@ select isnull(region, 'k.A'), region from customers
 
 
 
+ select * from 
+ orders o left join [order details] od
+ on o.orderid = od.orderid
+
+ select count(*) from orders  --830
+
+ select * from 
+	customers c left join orders o on c.CustomerID=o.CustomerID
+where orderid is null
+
+ select * from 
+	orders o right join customers c  on c.CustomerID=o.CustomerID
+where orderid is null
+
+andreasr@ppedv.de
+
+--cross join
+
+select * from customers cross join orders
