@@ -157,6 +157,6 @@ where orderid is null
 
 andreasr@ppedv.de
 
---cross join
+--cross join  --jeder DAtansatz wird mit jedem anderen verknüpft
 
 select * from customers cross join orders

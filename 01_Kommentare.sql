@@ -1,4 +1,69 @@
 --Wir wollen sicher sein, dass wir auf der richtigen DB sind!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use northwind;
+GO
+
+--der Rest der Zeile ein KOmmentar
+
+--Autor : ar1
+--Datum: 30.5.2025
+--
+
+/*  
+	alles KOmmentar
+
+	select top 3 * from customers
+
+	Ebene 15 = Syntaxfehler
+	Ebene 16 = ungültiges Objekt
+	ab Ebene 17--> Admin
+	Ebene 14 = Security
+*/
+
+
+select 
+		  companyname	   ---lkdhfsdfj
+		, contacttitle 		, country,	 city 						   
+from	
+		customers c 
+where 
+		country = 'Italy' 	 --alle aus Italien
+		and 
+		Customerid like 'A%' 
+order by 
+			  City
+			, country desc
+
+
+
+
+
+
+
+
+
+
+
+
+
 --immer markieren undann ausführen
 
 

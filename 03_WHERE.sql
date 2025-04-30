@@ -1,5 +1,209 @@
 --So könnte ein SELECT aussehen
 
+--Where
+
+select 
+		Sp1, Sp2 as Alias
+		Zahl, 'txt', Mathe
+from 
+		Tabelle t1
+where
+		t1.sp1 < >  <=  >= = ---exakte Vergleiche  keine Wildcards
+		AND | OR
+		t1.sp2  > ...
+
+
+order by 
+		Sp1 asc, sp2 desc
+
+
+select * from orders
+where
+	freight > 78
+
+ --alle Bestellungen des ALFKI	  Customerid
+
+ select * from orders
+ where
+		customerid = 'ALFKI'
+		OR
+		freight < 50
+
+
+--Suche alle Kunden aus UK und USA und Italy aus Customers
+select * from customers c
+where
+	c.Country= 'UK' 
+	OR
+	c.Country= 'USA' 
+	or
+	c.Country= 'Italy' 
+
+--kürzer
+
+select * from customers
+where
+	country in ('USA','UK','Italy')	 --besser als Sp = wert or spalte = wert
+
+ 
+--alle bestellungen von den Ang mit ID (2,4,6,8,9)
+
+select top 3 * from orders
+
+select * from orders o
+where 
+		o.EmployeeID in (2,4,6,8,9)
+
+
+select * from orders o 
+where 
+		o.OrderDate <  '6.7.1996'	--1996-07-06  englisch?
+
+
+--alle Bestellungen aus dem Jahr 1997
+
+select * from orders o
+where
+		o.OrderDate	  >= '1.1.1997'
+		AND
+		o.OrderDate   <= '31.12.1997 23:59:59.997'
+
+select 
+	year(orderdate),* from orders
+	where
+			year(orderdate)=1997   --muss alles lesen
+
+
+select * from orders o
+where
+	o.OrderDate between '1.1.1997' and '31.12.1997 23:59:59.997'--abkürzende Schreibweise
+
+
+--
+select * from orders
+	where 
+			employeeid != 2		  --Verneinung
+
+
+--bei in und between 
+--not in .. not between
+--alle die nicht aus 97 sind
+select * from orders o
+where
+	o.OrderDate not between '1.1.1997' and '31.12.1997 23:59:59.997'--abkürzende Schreibweise
+
+
+---LIKE
+
+---Wildcards nur bei LIKE
+
+--%  beliebig viele Zeichen  A% --muss mit A beginnen
+					---   %A    %A%
+
+-- where spalte like ''
+-- _ steht für ein! unbekanntes Zeichen
+
+--[Wertebereich] stehen für ein ! Zeichen 
+--[acrt]  [a-d] [3-5]  [abc|1-3]
+
+select top 3 * from customers
+
+
+--Suche alle Firmen heraus, die ein y im Namen haben
+
+select * from Customers c
+where
+		c.CompanyName like '%Y%'
+
+
+ --	soll ein y im Namen haben und mit H beginnen und mit s enden
+ select * from Customers c
+where
+		c.CompanyName like 'h%y%s'
+
+
+--alle Kunden , die mit a oder b oder c  oder d beginnen
+
+select * from customers where companyname < 'e'
+
+select * from customers
+where CompanyName like '[acfrt]%[st][st]'
+
+--falsche PIN suchen
+--PIN 
+where pin not like '[0-9][0-9][0-9][0-9]'
+
+
+--suche alle die ein % im Namen haben
+
+select * from customers 
+where 
+		companyname like '%[%]%'
+
+ -- Suchen nach allen Firmen, die ein ' im Namen haben
+select * from customers 
+where 
+		companyname like '%''%'
+
+	select * from Customers
+	where
+		CompanyName like 'B%e_'
+
+--Suche nach Customerid in Customers
+
+--die soll mit A C F oder L beginnen
+--der vorletzte Buchstabe soll  ein E oder ein s sein
+--und der Kunde soll aus einem Land kommen, das mit U beginnt
+
+
+select * from customers c
+where
+		c.CustomerID like  '[ACFL]%[es]_'
+		and
+		--select * from customers c	where
+		c.Country	 like 	'U%'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --Daten filtern
 
 select Spalten , Mathe, 'Text', Zahlen as Alias

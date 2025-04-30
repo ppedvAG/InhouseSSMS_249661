@@ -46,9 +46,9 @@
           <FullPath>04_ORDER_BY.sql</FullPath>
         </FileNode>
         <FileNode Name="05_Datum.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
           <FullPath>05_Datum.sql</FullPath>
         </FileNode>
         <FileNode Name="05_Systemfunktionen.sql">
@@ -104,6 +104,12 @@
           <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
           <AssociatedConnUserName>sa2</AssociatedConnUserName>
           <FullPath>Z_instnwnd.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Z_SELECT template full.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:192.100.100.2:False:sa2</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>192.100.100.2</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa2</AssociatedConnUserName>
+          <FullPath>Z_SELECT template full.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
